@@ -24,9 +24,8 @@ $doc_identificacao = addslashes($_POST['Doc_Identificacao']);
 $transf_particular = addslashes($_POST['Transf_Particular']);
 $deficiente        = addslashes($_POST['Deficiente']);
 $resp_informacao   = addslashes($_POST['Resp_Informacao']);
-$funcionario       = addslashes($_POST['Funcionario']);
 $deficiente_qual   = addslashes($_POST['Deficiente_Qual']);
 $identidade        = addslashes($_POST['Identidade']);
 
-alteraAluno($id, $nome, $mae, $pai, $responsavel ,$sexo ,$nascimento ,$rua, $numero, $bairro, $cidade, $estado, $complemento, $zoneamento, $vaga, $tel_mae, $tel_pai, $tel_responsavel, $parentesco, $doc_identificacao, $transf_particular, $deficiente, $resp_informacao, $funcionario, $deficiente_qual, $identidade );
+alteraAluno($id, $nome, $mae, $pai, $responsavel ,$sexo ,$nascimento ,$rua, $numero, $bairro, $cidade, $estado, $complemento, $zoneamento, $vaga, $tel_mae, $tel_pai, $tel_responsavel, $parentesco, $doc_identificacao, $transf_particular, $deficiente, $resp_informacao, $deficiente_qual, $identidade );
 ?>		

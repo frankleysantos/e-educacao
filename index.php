@@ -104,10 +104,10 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <h2>Dados da Criança</h2>
 <div class="row">
 	<div class="col-md-5"><label>Nome:</label>
-	<input class="form-control" type="text" name="Nome" required">
+	<input class="form-control" type="text" name="Nome" required onkeyup="maiuscula(this);">
 	</div>
 	<div class="col-md-3"><label>Data Nascimento</label>
-	<input type="text" name="Nascimento" class="form-control" onkeypress="dataConta(this); return SomenteNumero(event);" minlength="10" maxlength="10">	
+	<input type="text" name="Nascimento" class="form-control" onkeypress="dataConta(this); return event.charCode >= 48 && event.charCode <= 57;" minlength="10" maxlength="10">	
 	</div>
 	<div class="col-md-4"><label>Sexo:</label>
 		<input type="radio" name="Sexo" value="Masculino" required >Masculino
@@ -130,60 +130,61 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <h2>Dados Gerais:</h2>
 <div class="row">
 	<div class="col-md-5">Mãe:
-	<input  class="form-control" type="text" name="Mae">
+	<input  class="form-control" type="text" name="Mae" onkeyup="maiuscula(this);">
     </div>
     <div class="col-md-3">Telefone Mãe:	
-	<input type="text" name="Tel_Mae" class="form-control">
+	<input type="text" name="Tel_Mae" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 	</div>
 	<div class="col-md-4">RG Mãe:
-    <input type="text" name="Identidade" class="form-control">
+    <input type="text" name="Identidade" class="form-control" onkeyup="maiuscula(this);">
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-7">
-	Pai:<input type="text" name="Pai" class="form-control">
+	Pai:<input type="text" name="Pai" class="form-control" onkeyup="maiuscula(this);">
     </div>
     <div class="col-md-5">
-	Telefone Pai:<input type="text" name="Tel_Pai" class="form-control">	
+	Telefone Pai:<input type="text" name="Tel_Pai" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">	
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-6">Responsável:
-	<input type="text" name="Responsavel" class="form-control">
+	<input type="text" name="Responsavel" class="form-control" onkeyup="maiuscula(this);">
     </div>
     <div class="col-md-4">Parentesco:
-	<input type="text" name="Parentesco" class="form-control">	
+	<input type="text" name="Parentesco" class="form-control" onkeyup="maiuscula(this);">	
 	</div>
 	<div class="col-md-2">Telefone Responsável
-	<input type="text" name="Tel_Responsavel" class="form-control">	
+	<input type="text" name="Tel_Responsavel" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">	
 	</div>
 </div>
 
 <h2>Endereço:</h2>
 <div class="row">
     <div class="col-md-4">Rua:
-    <input  class="form-control" type="text" name="Rua">
+    <input  class="form-control" type="text" name="Rua" onkeyup="maiuscula(this);">
     </div>
     <div class="col-md-4">Nº:
    	<input type="text" name="Numero" class="form-control">
    </div>
     <div class="col-md-4">Bairro:
-	<input  class="form-control" type="text" name="Bairro">
+	<input  class="form-control" type="text" name="Bairro" onkeyup="maiuscula(this);">
     </div>
 </div>
 
 <div class="row">    
     <div class="col-md-4">Cidade:
-	<input  class="form-control" type="text" name="Cidade">
+	<input  class="form-control" type="text" name="Cidade" onkeyup="maiuscula(this);">
    </div>
    <div class="col-md-4">Complemento:
-   	<input type="text" name="Complemento" class="form-control">
+   	<input type="text" name="Complemento" class="form-control" onkeyup="maiuscula(this);">
    </div>
    <div class="col-md-4">Estado:
-   	<select class="form-control" name="Estado"> 
-     <option value="Acre"</option>
+   	<select class="form-control" name="Estado">
+   	 <option value="" selected>Escolha...</option> 
+     <option value="Acre">Acre</option>
      <option value="Alagoas">Alagoas</option>
      <option value="Amapá">Amapá</option>	 
      <option value="Amazonas">Amazonas</option>
@@ -218,12 +219,12 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <div class="row">
          <div class="col-md-6">
          <label>Possui algum tipo deficiência?</label><br />
-	     <input type="radio" name="Deficiente" id="DeficienteS" value="SIM" onclick="document.getElementById('Deficiente_Qual').disabled=false;" required/>Sim
-         <input type="radio" name="Deficiente" id="DeficienteN" value="NAO" onclick="document.getElementById('Deficiente_Qual').disabled=true;"/>Não
+	     <input type="radio" name="Deficiente" id="DeficienteS" value="SIM" onclick="document.getElementById('deficiente_Qual').disabled=false;" required/>Sim
+         <input type="radio" name="Deficiente" id="DeficienteN" value="NAO" onclick="document.getElementById('deficiente_Qual').disabled=true; document.getElementById('deficiente_Qual').value='';"/>Não
          </div>
          <div class="col-md-6">
             <label>Tipo de deficiência:</label>
-             <select name="Deficiente_Qual" class="form-control" required id="Deficiente_Qual" disabled="disabled">
+             <select name="Deficiente_Qual" class="form-control" required id="deficiente_Qual" disabled="disabled">
                  <option value="" selected>Escolha...</option>
                  <option value="AUDITIVA">Auditiva</option>
                  <option value="FISICA">Fisica</option>
@@ -237,10 +238,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <h2>Informações adicionais:</h2>
 <div class="row">
 	<div class="col-md-6">
-		<label>Responsável pelas Informações:</label><input type="text" name="Resp_Informacao" class="form-control" required">
-	</div>
-	<div class="col-md-6">	
-		<label>Funcionario:</label><input type="text" name="Funcionario" class="form-control" required>
+		<label>Responsável pelas Informações:</label><input type="text" name="Resp_Informacao" class="form-control" required" onkeyup="maiuscula(this);">
 	</div>
 </div>
 	<button type="submit" class="btn btn-primary">Cadastrar</button>

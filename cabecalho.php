@@ -30,6 +30,13 @@
           <li><a href="excel.php"><i class="fa fa-list"></i>&ensp;Excel</a></li>
           <?php }?>
         </ul>
+        <ul class="nav navbar-nav">
+          <?php
+           if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+          ?>
+          <li><a href="senha.php"><i class="fa fa-list"></i>&ensp;Alterar Senha</a></li>
+          <?php }?>
+        </ul>
       </div>
       <div class="col-md-2" align="right">
           <ul class="nav navbar-nav">
@@ -53,7 +60,7 @@
          include "config.php";
           if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
             $id = $_SESSION['id'];
-            $sql = $pdo->prepare("SELECT substring_index(nome, ' ', 1) as primeironome FROM pessoa WHERE id = :id");
+            $sql = $pdo->prepare("SELECT substring_index(nome, ' ', 1) as primeironome FROM login WHERE id = :id");
             $sql ->bindValue(":id", $id);
             $sql ->execute();
             if ($sql->rowCount() > 0) {

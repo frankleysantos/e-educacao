@@ -113,10 +113,10 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <h2>Dados da Criança</h2>
 <div class="row">
 	<div class="col-md-5"><label>Nome:</label>
-	<input class="form-control" type="text" name="Nome" required value="<?php echo $aluno['Nome']?>">
+	<input class="form-control" type="text" name="Nome" required value="<?php echo $aluno['Nome']?>" onkeyup="maiuscula(this);">
 	</div>
 	<div class="col-md-3"><label>Data Nascimento</label>
-	<input type="text" name="Nascimento" value="<?php echo $aluno['Nascimento']?>" class="form-control" onkeypress="dataConta(this); return SomenteNumero(event);" minlength="10" maxlength="10" required>	
+	<input type="text" name="Nascimento" value="<?php echo $aluno['Nascimento']?>" class="form-control" onkeypress="dataConta(this); return event.charCode >= 48 && event.charCode <= 57;" minlength="10" maxlength="10" required>	
 	</div>
 	<div class="col-md-4"><label>Sexo:</label>
 		<input type="radio" name="Sexo" value="Masculino" required <?php if($aluno['Sexo']=="Masculino") echo "checked";?>>Masculino
@@ -139,59 +139,60 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <h2>Dados Gerais:</h2>
 <div class="row">
 	<div class="col-md-5">Mãe:
-	<input  class="form-control" type="text" name="Mae" value="<?php echo $aluno['Mae']?>">
+	<input  class="form-control" type="text" name="Mae" value="<?php echo $aluno['Mae']?>" onkeyup="maiuscula(this);">
     </div>
     <div class="col-md-3">Telefone Mãe:	
-	<input type="text" name="Tel_Mae" class="form-control" value="<?php echo $aluno['Tel_Mae']?>">
+	<input type="text" name="Tel_Mae" class="form-control" value="<?php echo $aluno['Tel_Mae']?>" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 	</div>
 	<div class="col-md-4">RG Mãe:	
-	<input type="text" name="Identidade" class="form-control" value="<?php echo $aluno['Identidade']?>">
+	<input type="text" name="Identidade" class="form-control" value="<?php echo $aluno['Identidade']?>" onkeyup="maiuscula(this);">
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-7">
-	Pai:<input type="text" name="Pai" class="form-control" value="<?php echo $aluno['Pai']?>">
+	Pai:<input type="text" name="Pai" class="form-control" value="<?php echo $aluno['Pai']?>" onkeyup="maiuscula(this);">
     </div>
     <div class="col-md-5">
-	Telefone Pai:<input type="text" name="Tel_Pai" class="form-control" value="<?php echo $aluno['Tel_Pai']?>">	
+	Telefone Pai:<input type="text" name="Tel_Pai" class="form-control" value="<?php echo $aluno['Tel_Pai']?>" onkeypress="return event.charCode >= 48 && event.charCode <= 57">	
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-6">Responsável:
-	<input type="text" name="Responsavel" class="form-control" value="<?php echo $aluno['Responsavel']?>">
+	<input type="text" name="Responsavel" class="form-control" value="<?php echo $aluno['Responsavel']?>" onkeyup="maiuscula(this);">
     </div>
     <div class="col-md-4">Parentesco:
-	<input type="text" name="Parentesco" class="form-control" value="<?php echo $aluno['Parentesco']?>">	
+	<input type="text" name="Parentesco" class="form-control" value="<?php echo $aluno['Parentesco']?>" onkeyup="maiuscula(this);">	
 	</div>
 	<div class="col-md-2">Telefone Responsável
-	<input type="text" name="Tel_Responsavel" class="form-control" value="<?php echo $aluno['Tel_Responsavel']?>">	
+	<input type="text" name="Tel_Responsavel" class="form-control" value="<?php echo $aluno['Tel_Responsavel']?>" onkeypress="return event.charCode >= 48 && event.charCode <= 57">	
 	</div>
 </div>
 
 <h2>Endereço:</h2>
 <div class="row">
     <div class="col-md-4">Rua:
-    <input  class="form-control" type="text" name="Rua" value="<?php echo $aluno['Rua']?>">
+    <input  class="form-control" type="text" name="Rua" value="<?php echo $aluno['Rua']?>" onkeyup="maiuscula(this);">
     </div>
     <div class="col-md-4">Nº:
    	<input type="text" name="Numero" class="form-control" value="<?php echo $aluno['Numero']?>">
    </div>
     <div class="col-md-4">Bairro:
-	<input  class="form-control" type="text" name="Bairro" value="<?php echo $aluno['Bairro']?>">
+	<input  class="form-control" type="text" name="Bairro" value="<?php echo $aluno['Bairro']?>" onkeyup="maiuscula(this);">
     </div>
 </div>
 
 <div class="row">    
     <div class="col-md-4">Cidade:
-	<input  class="form-control" type="text" name="Cidade" value="<?php echo $aluno['Cidade']?>">
+	<input  class="form-control" type="text" name="Cidade" value="<?php echo $aluno['Cidade']?>" onkeyup="maiuscula(this);">
    </div>
    <div class="col-md-4">Complemento:
-   	<input type="text" name="Complemento" class="form-control" value="<?php echo $aluno['Complemento']?>">
+   	<input type="text" name="Complemento" class="form-control" value="<?php echo $aluno['Complemento']?>" onkeyup="maiuscula(this);">
    </div>
    <div class="col-md-4">Estado:
-   	<select class="form-control" name="Estado"> 
+   	<select class="form-control" name="Estado">
+   	 <option value=""<?php if($aluno['Estado']=='') echo "selected";?>>Escolha...</option> 
      <option value="Acre"<?php if($aluno['Estado']=='Acre') echo "selected";?>>Acre</option>
      <option value="Alagoas"<?php if($aluno['Estado']=='Alagoas') echo "selected";?>>Alagoas</option>
      <option value="Amapá"<?php if($aluno['Estado']=='Amapá') echo "selected";?>>Amapá</option>	 
@@ -227,12 +228,12 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <div class="row">
          <div class="col-md-6">
          <label>Possui algum tipo deficiência?</label><br />
-	 <input type="radio" onclick="document.getElementById('Deficiente_Qual').disabled=false;" name="Deficiente" id="DeficienteS" value="SIM"<?php if($aluno['Deficiente']=="SIM")echo "checked";?>  required/>Sim
-         <input type="radio" onclick="document.getElementById('Deficiente_Qual').disabled=true;" name="Deficiente" id="DeficienteN" value="NAO"<?php if($aluno['Deficiente']=="NAO")echo "checked"; ?>/>Não
+	 <input type="radio" onclick="document.getElementById('deficiente_Qual').disabled=false;" name="Deficiente" id="DeficienteS" value="SIM"<?php if($aluno['Deficiente']=="SIM")echo "checked";?>  required/>Sim
+         <input type="radio" onclick="document.getElementById('deficiente_Qual').disabled=true; document.getElementById('deficiente_Qual').value='';" name="Deficiente" id="DeficienteN" value="NAO"<?php if($aluno['Deficiente']=="NAO")echo "checked"; ?>/>Não
          </div>
          <div class="col-md-6">
             <label>Tipo de deficiência:</label>
-             <select name="Deficiente_Qual" class="form-control" id="Deficiente_Qual" required value="<?php echo $aluno['Deficiente_Qual']?>">
+             <select name="Deficiente_Qual" class="form-control" id="deficiente_Qual" required value="<?php echo $aluno['Deficiente_Qual']?>">
                  <option value="">Escolha...</option>
                  <option value="AUDITIVA"<?php if($aluno['Deficiente_Qual']=="AUDITIVA")echo "selected"; ?>>Auditiva</option>
                  <option value="FISICA"<?php if($aluno['Deficiente_Qual']=="FISICA")echo "selected"; ?>>FISICA</option>
@@ -246,10 +247,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <h2>Informações adicionais:</h2>
 <div class="row">
 	<div class="col-md-6">
-		Responsável pelas Informações: <input type="text" name="Resp_Informacao" class="form-control" required value="<?php echo $aluno['Resp_Informacao'] ?>">
-	</div>
-	<div class="col-md-6">	
-		Funcionario: <input type="text" name="Funcionario" class="form-control" required value="<?php echo $aluno['Funcionario'] ?>">
+		Responsável pelas Informações: <input type="text" name="Resp_Informacao" class="form-control" required value="<?php echo $aluno['Resp_Informacao'] ?>" onkeyup="maiuscula(this);">
 	</div>
 </div>
 

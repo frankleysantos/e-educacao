@@ -26,6 +26,52 @@ require_once("config.php"); ?><!DOCTYPE html>
   <![endif]-->
  </head>
  <body>
+ <div class="hidden-print container">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand fa fa-check" href="index.php?msn=0">PSS</a>
+      </div>
+      <div class="row">
+      <div class="col-md-4">
+        <ul class="nav navbar-nav">
+          <?php
+           if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+          ?>
+          <li><a href="listar-aluno.php"><i class="fa fa-list"></i>&ensp;Listar Alunos</a></li>
+          <?php }?>
+        </ul>
+        <ul class="nav navbar-nav">
+          <?php
+           if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+          ?>
+          <li><a href="excel.php"><i class="fa fa-list"></i>&ensp;Excel</a></li>
+          <?php }?>
+        </ul>
+        <ul class="nav navbar-nav">
+          <?php
+           if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+          ?>
+          <li><a href="senha.php"><i class="fa fa-list"></i>&ensp;Alterar Senha</a></li>
+          <?php }?>
+        </ul>
+      </div>
+      <div class="col-md-2" align="right">
+          <ul class="nav navbar-nav">
+            <li><?php 
+           if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+           echo "<a href='sair.php' class='btn-danger fa fa-sign-out'>&ensp;Sair</a>";
+           }
+          ?></li>
+          </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <br>
+  <br>
+  <br>
   <div class="container">
    <div class="bg-info hidden-print" style="padding:3px 5px 3px 5px">
     <h2 align="center">Sistema de Cadastro Escolar</h2>

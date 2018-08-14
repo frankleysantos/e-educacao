@@ -197,3 +197,8 @@ function verficaradio(){
 		return false;
 	}
 }
+
+function maiuscula(z){
+        v = z.value.toUpperCase();
+        z.value = v;
+    }

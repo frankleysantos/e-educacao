@@ -30,8 +30,7 @@
         <th>Telefone Pai</th>
         <th>Telefone Responsável</th>
         <th>Doc. Identificação</th>
-        <th>Resp. Informação</th>
-        <th>Funcionário</th>        
+        <th>Resp. Informação</th>      
 	</tr>
 	<?php
 	 $total = 0;
@@ -51,9 +50,11 @@
 
 		$sql = $pdo ->prepare("SELECT * FROM aluno order by ID LIMIT $p, $qntpg");
         $sql ->execute();
+        $count = 0;
         if ($sql -> rowCount() > 0) {
         	$sql = $sql ->fetchAll();
 		foreach($sql as $aluno) {
+			$count +=1;
 	?>
 	<tr>
 		<td><a class="btn btn-warning" href="imprimir.php?ID=<?=$aluno['ID']?>">Imprimir</a></td>
@@ -81,7 +82,6 @@
 		<td><?= $aluno['Tel_Responsavel'] ?></td>
 		<td><?= $aluno['Doc_Identificacao'] ?></td>
 		<td><?= $aluno['Resp_Informacao']?></td>
-		<td><?= $aluno['Funcionario']?></td>
 	</tr>
 	<?php
 		}
@@ -91,6 +91,7 @@
 </div>
 
 <?php
+echo "<h3><label class='form-control label-warning' align='center'>".$count."&ensp;de&ensp;".$total."&ensp;Registros"."</label></h3>";
  echo "<hr/>";
  for ($q=0; $q < $paginas; $q++) { 
  	echo '<a href="./listar-aluno.php?p='.($q+1).'" class="btn btn-warning">'.($q+1).'</a>';
