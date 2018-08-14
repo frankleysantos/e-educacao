@@ -88,6 +88,7 @@ require_once("config.php"); ?><!DOCTYPE html>
   <div class="hidden-print container">
    <p>
     <a href="#" onclick="window.print()" class="btn btn-warning">Confirmar e Imprimir</a>
+    <span><a href="index.php" class="btn btn-success">Novo Cadastro</a></span>
     <span class="pull-right"><a href="sair.php" class="btn btn-danger">Sair</a></span>
    </p>
   </div>

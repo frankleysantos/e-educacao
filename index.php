@@ -91,12 +91,12 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 	<label>Período da Educação infantil em que a vaga é solicitada?</label>
 <select name="Vaga" class="form-control" required>
 	<option value="">Escolha...</option>
-	<option value="Berçario 1">Berçario 1 - nascidos de 01/07/2017 a 31/08/2017</option>
-	<option value="Berçario 2">Berçario 2 - 01 ano - nascidos de 01/07/2016 a 30/06/2017</option>
-	<option value="Maternal 1">Maternal 1 - 02 anos - nascidos de 01/07/2015 a 30/06/2016</option>
-	<option value="Maternal 2">Maternal 2 - 03 anos - nascidos de 01/07/2014 a 30/06/2015</option>
-	<option value="1º Período">1º Período 2 - 04 anos - nascidos de 01/07/2013 a 30/06/2014</option>
-	<option value="2º Período">2º Período 2 - 05 anos - nascidos de 01/07/2012 a 30/06/2013</option>
+	<option value="Berçario 1">Berçario 1 - nascidos até 01/08/2018</option>
+	<option value="Berçario 2">Berçario 2 - 01 ano - nascidos de 01/07/2017 a 30/06/2018</option>
+	<option value="Maternal 1">Maternal 1 - 02 anos - nascidos de 01/07/2016 a 30/06/2017</option>
+	<option value="Maternal 2">Maternal 2 - 03 anos - nascidos de 01/07/2015 a 30/06/2016</option>
+	<option value="1º Período">1º Período 2 - 04 anos - nascidos de 01/07/2014 a 30/06/2015</option>
+	<option value="2º Período">2º Período 2 - 05 anos - nascidos de 01/07/2013 a 30/06/2014</option>
 </select>
 </div>
 </div>
@@ -107,7 +107,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 	<input class="form-control" type="text" name="Nome" required">
 	</div>
 	<div class="col-md-3"><label>Data Nascimento</label>
-	<input type="text" name="Nascimento" class="form-control" onkeyup="dataConta(this);" minlength="10" maxlength="10" onkeypress='return SomenteNumero(event)'>	
+	<input type="text" name="Nascimento" class="form-control" onkeypress="dataConta(this); return SomenteNumero(event);" minlength="10" maxlength="10">	
 	</div>
 	<div class="col-md-4"><label>Sexo:</label>
 		<input type="radio" name="Sexo" value="Masculino" required >Masculino
@@ -129,11 +129,14 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 </div>
 <h2>Dados Gerais:</h2>
 <div class="row">
-	<div class="col-md-7">Mãe:
+	<div class="col-md-5">Mãe:
 	<input  class="form-control" type="text" name="Mae">
     </div>
-    <div class="col-md-5">Telefone Mãe:	
+    <div class="col-md-3">Telefone Mãe:	
 	<input type="text" name="Tel_Mae" class="form-control">
+	</div>
+	<div class="col-md-4">RG Mãe:
+    <input type="text" name="Identidade" class="form-control">
 	</div>
 </div>
 

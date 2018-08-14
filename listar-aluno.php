@@ -11,6 +11,7 @@
 		<th>Matrícula</th>
 		<th>Aluno</th>
 		<th>Mãe</th>
+		<th>RG da Mãe</th>
 		<th>Pai</th>
         <th>Responsável</th>
         <th>Sexo</th>
@@ -60,6 +61,7 @@
 		<td><?= $aluno['ID'] ?></td>
 		<td><?= $aluno['Nome'] ?></td>
 		<td><?= $aluno['Mae'] ?></td>
+		<td><?= $aluno['Identidade'] ?></td>
 		<td><?= $aluno['Pai'] ?></td>
 		<td><?= $aluno['Responsavel'] ?></td>
 		<td><?= $aluno['Sexo'] ?></td>
