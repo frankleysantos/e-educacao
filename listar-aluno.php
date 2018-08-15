@@ -14,6 +14,7 @@
  		   </div>
  	    </div>
       </form>
+      <hr>
 <?php
 if (isset($_POST['Nome']) && !empty($_POST['Nome'])) {
    $nome = $_POST['Nome'];  

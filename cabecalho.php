@@ -15,7 +15,7 @@
 				<a class="navbar-brand fa fa-check" href="index.php?msn=0">Página Inicial</a>
 			</div>
 			<div class="row">
-      <div class="col-md-4">
+      <div class="col-md-8">
 				<ul class="nav navbar-nav">
           <?php
            if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
@@ -27,7 +27,7 @@
           <?php
            if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
           ?>
-          <li><a href="excel.php"><i class="fa fa-list"></i>&ensp;Excel</a></li>
+          <li><a href="excel.php"><i class="fa fa-list"></i>&ensp;Gerar Planilha Excel</a></li>
           <?php }?>
         </ul>
         <ul class="nav navbar-nav">
@@ -73,4 +73,5 @@
        </div>
      </div>
      <p align="center"><img src="img/logo.png"></p>
+     <hr>
 			

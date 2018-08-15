@@ -1,9 +1,6 @@
 <?php 
 include "config.php";
 include "cabecalho.php";
-
-if (isset($_POST['cpd']) && !empty($_POST['cpd']) && $_POST['cpd'] == "") {
-
 if (isset($_POST['cpf']) && !empty($_POST['cpf'])) {
 	$cpf = $_POST['cpf'];
 	$sql = $pdo ->prepare("SELECT * FROM login WHERE cpf = :cpf");
@@ -47,21 +44,5 @@ if (isset($_POST['cpf']) && !empty($_POST['cpf'])) {
 	<button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
 <?php
-}else{
-?>
-<form action="" method="POST" role="form">
-	<legend>Digite a senha para liberar o acesso ao cadastro de usuários</legend>
-
-	<div class="form-group">
-		<label for="">Senha do Sistema</label>
-		<input type="password" class="form-control" id="" placeholder="Senha Sistema" name="cpd">
-	</div>
-
-	
-
-	<button type="submit" class="btn btn-primary">Acessar</button>
-</form>
-<?php
-}
 include "rodape.php";
 ?>

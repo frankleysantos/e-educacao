@@ -13,7 +13,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
    		
 ?>
 <form action="alterar-aluno.php" method="POST" role="form">
-<h1>Cadastro da Educação Infantil 2018</h1>
+<h1>Cadastro da Educação Infantil 2019</h1>
      <input type="hidden" name="ID" value="<?php echo $aluno['ID'];?>">
 <div class="row">
 	<div class="col-md-6"><label>Zoneamento?</label>
@@ -233,10 +233,10 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
          </div>
          <div class="col-md-6">
             <label>Tipo de deficiência:</label>
-             <select name="Deficiente_Qual" class="form-control" id="deficiente_Qual" required value="<?php echo $aluno['Deficiente_Qual']?>">
-                 <option value="">Escolha...</option>
+             <select name="Deficiente_Qual" class="form-control" id="deficiente_Qual" required value="<?php echo $aluno['Deficiente_Qual']?>" <?php if($aluno['Deficiente_Qual']=="")echo "disabled"; ?>>
+                 <option value=""<?php if($aluno['Deficiente_Qual']=="")echo "selected"; ?>>Escolha...</option>
                  <option value="AUDITIVA"<?php if($aluno['Deficiente_Qual']=="AUDITIVA")echo "selected"; ?>>Auditiva</option>
-                 <option value="FISICA"<?php if($aluno['Deficiente_Qual']=="FISICA")echo "selected"; ?>>FISICA</option>
+                 <option value="FISICA"<?php if($aluno['Deficiente_Qual']=="FISICA")echo "selected"; ?>>Fisica</option>
                  <option value="INTELECTUAL"<?php if($aluno['Deficiente_Qual']=="INTELECTUAL")echo "selected"; ?>>Intelectual</option>
 		         <option value="FALA"<?php if($aluno['Deficiente_Qual']=="FALA")echo "selected"; ?>>Fala</option>
 		         <option value="OUTRA"<?php if($aluno['Deficiente_Qual']=="OUTRA")echo "selected"; ?>>Outra</option>
@@ -250,7 +250,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 		Responsável pelas Informações: <input type="text" name="Resp_Informacao" class="form-control" required value="<?php echo $aluno['Resp_Informacao'] ?>" onkeyup="maiuscula(this);">
 	</div>
 </div>
-
+<hr>
 	<button type="submit" class="btn btn-success">Salvar Alterações</button>
 </form>
 <?php

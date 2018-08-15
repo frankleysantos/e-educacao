@@ -5,7 +5,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 
 ?>
 <form action="cadastrar-aluno.php" method="POST" role="form">
-<h1>Cadastro da Educação Infantil 2018</h1>
+<h1>Cadastro da Educação Infantil 2019</h1>
 <div class="row">
 	<div class="col-md-6"><label>Zoneamento?</label>
 	<select class="form-control" name="Zoneamento" required>
@@ -104,10 +104,10 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <h2>Dados da Criança</h2>
 <div class="row">
 	<div class="col-md-5"><label>Nome:</label>
-	<input class="form-control" type="text" name="Nome" required onkeyup="maiuscula(this);">
+	<input class="form-control" type="text" name="Nome" required onkeyup="maiuscula(this);" placeholder="Nome da Criança">
 	</div>
 	<div class="col-md-3"><label>Data Nascimento</label>
-	<input type="text" name="Nascimento" class="form-control" onkeypress="dataConta(this); return event.charCode >= 48 && event.charCode <= 57;" minlength="10" maxlength="10">	
+	<input type="text" placeholder="Somente Números" name="Nascimento" class="form-control" onkeypress="dataConta(this); return event.charCode >= 48 && event.charCode <= 57;" minlength="10" maxlength="10">	
 	</div>
 	<div class="col-md-4"><label>Sexo:</label>
 		<input type="radio" name="Sexo" value="Masculino" required >Masculino
@@ -130,56 +130,56 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <h2>Dados Gerais:</h2>
 <div class="row">
 	<div class="col-md-5">Mãe:
-	<input  class="form-control" type="text" name="Mae" onkeyup="maiuscula(this);">
+	<input  class="form-control" type="text" name="Mae" onkeyup="maiuscula(this);" placeholder="Nome da Mãe">
     </div>
     <div class="col-md-3">Telefone Mãe:	
-	<input type="text" name="Tel_Mae" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+	<input placeholder="Somente Números" type="text" name="Tel_Mae" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 	</div>
 	<div class="col-md-4">RG Mãe:
-    <input type="text" name="Identidade" class="form-control" onkeyup="maiuscula(this);">
+    <input type="text" placeholder="Identidade da Mãe" name="Identidade" class="form-control" onkeyup="maiuscula(this);">
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-7">
-	Pai:<input type="text" name="Pai" class="form-control" onkeyup="maiuscula(this);">
+	Pai:<input type="text" placeholder="Nome do Pai" name="Pai" class="form-control" onkeyup="maiuscula(this);">
     </div>
     <div class="col-md-5">
-	Telefone Pai:<input type="text" name="Tel_Pai" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">	
+	Telefone Pai:<input type="text" placeholder="Somente Números" name="Tel_Pai" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">	
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-md-6">Responsável:
-	<input type="text" name="Responsavel" class="form-control" onkeyup="maiuscula(this);">
+	<input type="text" placeholder="Nome do Responsável" name="Responsavel" class="form-control" onkeyup="maiuscula(this);">
     </div>
     <div class="col-md-4">Parentesco:
-	<input type="text" name="Parentesco" class="form-control" onkeyup="maiuscula(this);">	
+	<input type="text" placeholder="Parentesco" name="Parentesco" class="form-control" onkeyup="maiuscula(this);">	
 	</div>
 	<div class="col-md-2">Telefone Responsável
-	<input type="text" name="Tel_Responsavel" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">	
+	<input type="text" placeholder="Somente Números" name="Tel_Responsavel" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57">	
 	</div>
 </div>
 
 <h2>Endereço:</h2>
 <div class="row">
     <div class="col-md-4">Rua:
-    <input  class="form-control" type="text" name="Rua" onkeyup="maiuscula(this);">
+    <input  class="form-control" type="text" placeholder="Rua" name="Rua" onkeyup="maiuscula(this);">
     </div>
     <div class="col-md-4">Nº:
-   	<input type="text" name="Numero" class="form-control">
+   	<input type="text" name="Numero" class="form-control" placeholder="Número">
    </div>
     <div class="col-md-4">Bairro:
-	<input  class="form-control" type="text" name="Bairro" onkeyup="maiuscula(this);">
+	<input  class="form-control" type="text" placeholder="Bairro" name="Bairro" onkeyup="maiuscula(this);">
     </div>
 </div>
 
 <div class="row">    
     <div class="col-md-4">Cidade:
-	<input  class="form-control" type="text" name="Cidade" onkeyup="maiuscula(this);">
+	<input  class="form-control" type="text" placeholder="Cidade" name="Cidade" onkeyup="maiuscula(this);">
    </div>
    <div class="col-md-4">Complemento:
-   	<input type="text" name="Complemento" class="form-control" onkeyup="maiuscula(this);">
+   	<input type="text" name="Complemento" placeholder="Complemento" class="form-control" onkeyup="maiuscula(this);">
    </div>
    <div class="col-md-4">Estado:
    	<select class="form-control" name="Estado">
@@ -238,9 +238,10 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <h2>Informações adicionais:</h2>
 <div class="row">
 	<div class="col-md-6">
-		<label>Responsável pelas Informações:</label><input type="text" name="Resp_Informacao" class="form-control" required" onkeyup="maiuscula(this);">
+		<label>Responsável pelas Informações:</label><input type="text" placeholder="Responsável pelas Informações" name="Resp_Informacao" class="form-control" required" onkeyup="maiuscula(this);">
 	</div>
 </div>
+<hr>
 	<button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>
 <?php
