@@ -39,8 +39,8 @@ function insereAluno($nome, $mae, $pai, $responsavel ,$sexo ,$nascimento ,$rua, 
 
 function alteraAluno($id, $nome, $mae, $pai, $responsavel ,$sexo ,$nascimento ,$rua, $numero, $bairro, $cidade, $estado, $complemento,$zoneamento, $vaga, $tel_mae, $tel_pai, $tel_responsavel, $parentesco, $doc_identificacao, $transf_particular, $deficiente, $resp_informacao, $deficiente_qual, $identidade) {
     include "config.php";
-    $idfuncionario = $_SESSION['id'];
-    $sql = $pdo->prepare("UPDATE aluno SET Nome =:Nome, Mae = :Mae, Pai = :Pai, Responsavel = :Responsavel, Sexo = :Sexo, Nascimento = :Nascimento, Rua = :Rua, Numero = :Numero, Bairro = :Bairro, Cidade = :Cidade, Estado = :Estado, Complemento = :Complemento, Zoneamento = :Zoneamento, Vaga = :Vaga, Tel_Mae =:Tel_Mae, Tel_Pai = :Tel_Pai, Tel_Responsavel = :Tel_Responsavel, Parentesco = :Parentesco, Doc_Identificacao = :Doc_Identificacao, Transf_Particular = :Transf_Particular, Deficiente = :Deficiente, Resp_Informacao = :Resp_Informacao, Deficiente_Qual = :Deficiente_Qual, Identidade = :Identidade, id_funcionario = :id_funcionario, Quando = now() WHERE ID = :id");
+    $id_update = $_SESSION['id'];
+    $sql = $pdo->prepare("UPDATE aluno SET Nome =:Nome, Mae = :Mae, Pai = :Pai, Responsavel = :Responsavel, Sexo = :Sexo, Nascimento = :Nascimento, Rua = :Rua, Numero = :Numero, Bairro = :Bairro, Cidade = :Cidade, Estado = :Estado, Complemento = :Complemento, Zoneamento = :Zoneamento, Vaga = :Vaga, Tel_Mae =:Tel_Mae, Tel_Pai = :Tel_Pai, Tel_Responsavel = :Tel_Responsavel, Parentesco = :Parentesco, Doc_Identificacao = :Doc_Identificacao, Transf_Particular = :Transf_Particular, Deficiente = :Deficiente, Resp_Informacao = :Resp_Informacao, Deficiente_Qual = :Deficiente_Qual, Identidade = :Identidade, id_update = :id_update, data_update = now(), Quando = now() WHERE ID = :id");
     $sql ->bindValue(":id", $id);
     $sql ->bindValue(":Nome", $nome);
     $sql ->bindValue(":Mae", $mae);
@@ -66,7 +66,7 @@ function alteraAluno($id, $nome, $mae, $pai, $responsavel ,$sexo ,$nascimento ,$
     $sql ->bindValue(":Resp_Informacao", $resp_informacao);
     $sql ->bindValue(":Deficiente_Qual", $deficiente_qual);
     $sql ->bindValue(":Identidade", $identidade);
-    $sql ->bindValue(":id_funcionario", $idfuncionario);
+    $sql ->bindValue(":id_update", $id_update);
     $sql ->execute();
     header("Location: imprimir.php?ID=$id");
 }

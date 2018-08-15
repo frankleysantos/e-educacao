@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>PSS - 2018</title>
+	<title>Educação - 2018</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
@@ -12,7 +12,7 @@
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand fa fa-check" href="index.php?msn=0">PSS</a>
+				<a class="navbar-brand fa fa-check" href="index.php?msn=0">Página Inicial</a>
 			</div>
 			<div class="row">
       <div class="col-md-4">
