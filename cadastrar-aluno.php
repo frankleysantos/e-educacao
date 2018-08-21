@@ -25,6 +25,7 @@ $deficiente        = addslashes($_POST['Deficiente']);
 $resp_informacao   = addslashes($_POST['Resp_Informacao']);
 $deficiente_qual   = addslashes($_POST['Deficiente_Qual']);
 $identidade        = addslashes($_POST['Identidade']);
+$rg_responsavel        = addslashes($_POST['RG_Responsavel']);
 
-insereAluno($nome, $mae, $pai, $responsavel ,$sexo ,$nascimento ,$rua, $numero, $bairro, $cidade, $estado, $complemento,$zoneamento, $vaga, $tel_mae, $tel_pai, $tel_responsavel, $parentesco, $doc_identificacao, $transf_particular, $deficiente, $resp_informacao, $deficiente_qual, $identidade );
+insereAluno($nome, $mae, $pai, $responsavel ,$sexo ,$nascimento ,$rua, $numero, $bairro, $cidade, $estado, $complemento,$zoneamento, $vaga, $tel_mae, $tel_pai, $tel_responsavel, $parentesco, $doc_identificacao, $transf_particular, $deficiente, $resp_informacao, $deficiente_qual, $identidade, $rg_responsavel);
 ?>

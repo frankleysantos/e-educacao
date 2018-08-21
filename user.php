@@ -31,7 +31,7 @@ if (isset($_POST['cpf']) && !empty($_POST['cpf'])) {
 	</div>
 	<div class="form-group">
 		<label for="">CPF</label>
-		<input type="text" class="form-control" id="" placeholder="CPF - Somente Numeros" name="cpf" required>
+		<input type="text" class="form-control" id="cpf" placeholder="CPF - Somente Numeros" name="cpf" maxlength="11" minlength="11" required onblur="return verificarCPF(this.value)" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 	</div>
 	<div class="form-group">
 		<label for="">Senha</label>

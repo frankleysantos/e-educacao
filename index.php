@@ -5,7 +5,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 
 ?>
 <form action="cadastrar-aluno.php" method="POST" role="form">
-<h1>Cadastro da Educação Infantil 2019</h1>
+<h1>Sistema de Cadastramento Infantil</h1>
 <div class="row">
 	<div class="col-md-6"><label>Zoneamento?</label>
 	<select class="form-control" name="Zoneamento" required>
@@ -16,6 +16,8 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 	<option value="Barreiros">Barreiros</option>
 	<option value="Bela Vista">Bela Vista</option>
 	<option value="Belvedere">Belvedere</option>
+	<option value="Brejão">Brejão</option>
+	<option value="Campo">Campo</option>
 	<option value="Castro Pires">Castro Pires</option>
 	<option value="Centro">Centro</option>
 	<option value="Cidade Alta">Cidade Alta</option>
@@ -49,6 +51,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 	<option value="Manoel Pimenta">Manoel Pimenta</option>
 	<option value="Matinha">Matinha</option>
 	<option value="Marajoara">Marajoara</option>
+	<option value="Maravilha">Maravilha</option>
 	<option value="Minas Novas">Minas Novas</option>
 	<option value="Monte Carlo">Monte Carlo</option>
 	<option value="Morro da Rádio">Morro da Rádio</option>
@@ -72,6 +75,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 	<option value="Tabajaras">Tabajaras</option>
 	<option value="Taquara">Taquara</option>
 	<option value="Teófilo Rocha">Teófilo Rocha</option>
+	<option value="Topázio">Topázio</option>
 	<option value="Turma 36">Turma 36</option>
 	<option value="Turma 37">Turma 37</option>
 	<option value="Turma 38">Turma 38</option>
@@ -91,7 +95,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 	<label>Período da Educação infantil em que a vaga é solicitada?</label>
 <select name="Vaga" class="form-control" required>
 	<option value="">Escolha...</option>
-	<option value="Berçario 1">Berçario 1 - nascidos até 01/08/2018</option>
+	<option value="Berçario 1">Berçário 1 - 01/07/2018 a 01/08/2018</option>
 	<option value="Berçario 2">Berçario 2 - 01 ano - nascidos de 01/07/2017 a 30/06/2018</option>
 	<option value="Maternal 1">Maternal 1 - 02 anos - nascidos de 01/07/2016 a 30/06/2017</option>
 	<option value="Maternal 2">Maternal 2 - 03 anos - nascidos de 01/07/2015 a 30/06/2016</option>
@@ -150,9 +154,12 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 </div>
 
 <div class="row">
-	<div class="col-md-6">Responsável:
+	<div class="col-md-4">Responsável:
 	<input type="text" placeholder="Nome do Responsável" name="Responsavel" class="form-control" onkeyup="maiuscula(this);">
     </div>
+    <div class="col-md-2">RG Responsável:
+    <input type="text" placeholder="Identidade" name="RG_Responsavel" class="form-control" onkeyup="maiuscula(this);">
+	</div>
     <div class="col-md-4">Parentesco:
 	<input type="text" placeholder="Parentesco" name="Parentesco" class="form-control" onkeyup="maiuscula(this);">	
 	</div>

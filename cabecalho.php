@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Educação - 2018</title>
+	<title>Cadastramento</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
@@ -73,5 +73,6 @@
        </div>
      </div>
      <p align="center"><img src="img/logo.png"></p>
+     <h3 align="center">Secretaria Municipal de Educação, Ciência e Tecnologia.</h3>
      <hr>
 			

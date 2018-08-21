@@ -13,7 +13,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
    		
 ?>
 <form action="alterar-aluno.php" method="POST" role="form">
-<h1>Cadastro da Educação Infantil 2019</h1>
+<h1>Sistema de Cadastramento Infantil</h1>
      <input type="hidden" name="ID" value="<?php echo $aluno['ID'];?>">
 <div class="row">
 	<div class="col-md-6"><label>Zoneamento?</label>
@@ -25,6 +25,8 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 	<option value="Barreiros"<?php if($aluno['Zoneamento']=="Barreiros") echo "selected";?>>Barreiros</option>
 	<option value="Bela Vista"<?php if($aluno['Zoneamento']=="Bela Vista") echo "selected";?>>Bela Vista</option>
 	<option value="Belvedere"<?php if($aluno['Zoneamento']=="Belvedere") echo "selected";?>>Belvedere</option>
+	<option value="Brejão"<?php if($aluno['Zoneamento']=="Brejão") echo "selected";?>>Brejão</option>
+	<option value="Campo"<?php if($aluno['Zoneamento']=="Campo") echo "selected";?>>Campo</option>
 	<option value="Castro Pires"<?php if($aluno['Zoneamento']=="Castro Pires") echo "selected";?>>Castro Pires</option>
 	<option value="Centro" <?php if($aluno['Zoneamento']=="Centro") echo "selected";?>>Centro</option>
 	<option value="Cidade Alta" <?php if($aluno['Zoneamento']=="Cidade Alta") echo "selected";?>>Cidade Alta</option>
@@ -58,6 +60,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 	<option value="Manoel Pimenta" <?php if($aluno['Zoneamento']=="Manoel Pimenta") echo "selected";?>>Manoel Pimenta</option>
 	<option value="Matinha" <?php if($aluno['Zoneamento']=="Matinha") echo "selected";?>>Matinha</option>
 	<option value="Marajoara" <?php if($aluno['Zoneamento']=="Marajoara") echo "selected";?>>Marajoara</option>
+	<option value="Maravilha" <?php if($aluno['Zoneamento']=="Maravilha") echo "selected";?>>Maravilha</option>Maravilha
 	<option value="Minas Novas" <?php if($aluno['Zoneamento']=="Minas Novas") echo "selected";?>>Minas Novas</option>
 	<option value="Monte Carlo" <?php if($aluno['Zoneamento']=="Monte Carlo") echo "selected";?>>Monte Carlo</option>
 	<option value="Morro da Rádio" <?php if($aluno['Zoneamento']=="Morro da Rádio") echo "selected";?>>Morro da Rádio</option>
@@ -81,6 +84,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 	<option value="Tabajaras" <?php if($aluno['Zoneamento']=="Tabajaras") echo "selected";?>>Tabajaras</option>
 	<option value="Taquara" <?php if($aluno['Zoneamento']=="Taquara") echo "selected";?>>Taquara</option>
 	<option value="Teófilo Rocha" <?php if($aluno['Zoneamento']=="Teófilo Rocha") echo "selected";?>>Teófilo Rocha</option>
+	<option value="Topázio" <?php if($aluno['Zoneamento']=="Topázio") echo "selected";?>>Topázio</option>
 	<option value="Turma 36" <?php if($aluno['Zoneamento']=="Turma 36") echo "selected";?>>Turma 36</option>
 	<option value="Turma 37" <?php if($aluno['Zoneamento']=="Turma 37") echo "selected";?>>Turma 37</option>
 	<option value="Turma 38" <?php if($aluno['Zoneamento']=="Turma 38") echo "selected";?>>Turma 38</option>
@@ -100,7 +104,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 	<label>Período da Educação infantil em que a vaga é solicitada?</label>
 <select name="Vaga" class="form-control" required>
 	<option value="">Escolha...</option>
-	<option value="Berçario 1"<?php if($aluno['Vaga']=="Berçario 1") echo "selected";?>>Berçario 1 - nascidos até 01/08/2018</option>
+	<option value="Berçario 1"<?php if($aluno['Vaga']=="Berçario 1") echo "selected";?>>Berçário 1 - 01/07/2018 a 01/08/2018</option>
 	<option value="Berçario 2"<?php if($aluno['Vaga']=="Berçario 2") echo "selected";?>>Berçario 2 - 01 ano - nascidos de 01/07/2017 a 30/06/2018</option>
 	<option value="Maternal 1"<?php if($aluno['Vaga']=="Maternal 1") echo "selected";?>>Maternal 1 - 02 anos - nascidos de 01/07/2016 a 30/06/2017</option>
 	<option value="Maternal 2"<?php if($aluno['Vaga']=="Maternal 2") echo "selected";?>>Maternal 2 - 03 anos - nascidos de 01/07/2015 a 30/06/2016</option>
@@ -159,9 +163,12 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 </div>
 
 <div class="row">
-	<div class="col-md-6">Responsável:
+	<div class="col-md-4">Responsável:
 	<input type="text" name="Responsavel" class="form-control" value="<?php echo $aluno['Responsavel']?>" onkeyup="maiuscula(this);">
     </div>
+    <div class="col-md-2">RG Responsável:
+    <input type="text" name="RG_Responsavel" class="form-control" value="<?php echo $aluno['RG_Responsavel']?>" onkeyup="maiuscula(this);">
+	</div>
     <div class="col-md-4">Parentesco:
 	<input type="text" name="Parentesco" class="form-control" value="<?php echo $aluno['Parentesco']?>" onkeyup="maiuscula(this);">	
 	</div>

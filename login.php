@@ -34,11 +34,11 @@ echo "<label class='btn btn-success form-control'>".$msn."</label>";
 ?>
 
 <form method="POST">
-	<legend>Educação</legend>
+	<legend>Educação Infantil</legend>
 
 	<div class="form-group">
 		<label class="fa fa-user">&ensp;CPF</label>
-		<input type="text" class="form-control" name="cpf" placeholder="Digite o seu CPF" maxlength="11" minlength="11" onblur="return verificarCPF(this.value)" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+		<input type="text" class="form-control" name="cpf" id="CPF" placeholder="Digite o seu CPF" maxlength="11" minlength="11" onblur="return verificarCPF(this.value)" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 	</div>
 	<div class="form-group">
 		<label class="fa fa-unlock">&ensp;Senha</label>

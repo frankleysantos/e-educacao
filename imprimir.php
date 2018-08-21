@@ -30,7 +30,7 @@ require_once("config.php"); ?><!DOCTYPE html>
     <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand fa fa-check" href="index.php?msn=0">PSS</a>
+        <a class="navbar-brand fa fa-check" href="index.php?msn=0">Página Inicial</a>
       </div>
       <div class="row">
       <div class="col-md-4">
@@ -133,7 +133,7 @@ require_once("config.php"); ?><!DOCTYPE html>
   </div>
   <div class="hidden-print container">
    <p>
-    <a href="#" onclick="window.print()" class="btn btn-warning">Confirmar e Imprimir</a>
+    <a href="#" onclick="window.print()" class="btn btn-warning">Imprimir</a>
     <span class="pull-right"><a href="index.php" class="btn btn-success">Novo Cadastro</a></span>
    </p>
   </div>
